@@ -46,7 +46,7 @@ public class InfoActivity extends AppCompatActivity {
     JSONObject jsonObject;
     final String TAG = "(InfoActivity)DEBUG:";
     String responseString;
-    String urlString = "http://172.30.138.140:8080/test/GetInfo.jsp";
+    String urlString = "http://172.:8080/test/GetInfo.jsp";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

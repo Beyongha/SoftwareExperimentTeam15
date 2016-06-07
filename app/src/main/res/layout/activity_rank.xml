@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.beyongha.softwareexperimentteam15.RankActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이달의 답변왕"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:layout_marginTop="50dp"
+        />
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        >
+        <TextView
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Rank"
+            />
+        <TextView
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Name"
+            />
+
+        <TextView
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Point"
+            />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/text_rank1"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Rank1" />
+        <TextView
+            android:id="@+id/text_name1"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Name1" />
+        <TextView
+            android:id="@+id/text_point1"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Point1" />
+    </TableRow>
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/text_rank2"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Rank2" />
+        <TextView
+            android:id="@+id/text_name2"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Name2" />
+        <TextView
+            android:id="@+id/text_point2"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Point2" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp" >
+        <TextView
+            android:id="@+id/text_rank3"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Rank3" />
+        <TextView
+            android:id="@+id/text_name3"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Name3" />
+        <TextView
+            android:id="@+id/text_point3"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Point3" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/text_rank4"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Rank4" />
+        <TextView
+            android:id="@+id/text_name4"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Name4" />
+        <TextView
+            android:id="@+id/text_point4"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Point4" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/text_rank5"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Rank5" />
+        <TextView
+            android:id="@+id/text_name5"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Name5" />
+        <TextView
+            android:id="@+id/text_point5"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Point5" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Rank6"
+            android:id="@+id/text_rank6"
+            />
+        <TextView
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Name6"
+            android:id="@+id/text_name6"
+            />
+        <TextView
+            android:id="@+id/text_point6"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Point6" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/text_rank7"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Rank7" />
+        <TextView
+            android:id="@+id/text_name7"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Name7" />
+        <TextView
+            android:id="@+id/text_point7"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Point7" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/text_rank8"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Rank8" />
+        <TextView
+            android:id="@+id/text_name8"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Name8" />
+        <TextView
+            android:id="@+id/text_point8"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Point8" />
+
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/text_rank9"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Rank9" />
+        <TextView
+            android:id="@+id/text_name9"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Name9" />
+        <TextView
+            android:id="@+id/text_point9"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Point9" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/text_rank10"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Rank10" />
+        <TextView
+            android:id="@+id/text_name10"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Name10" />
+        <TextView
+            android:id="@+id/text_point10"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:text="Point10" />
+    </TableRow>
+</LinearLayout>

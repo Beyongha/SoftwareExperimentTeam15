@@ -19,14 +19,31 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.provider.MediaStore;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
 import org.apache.http.util.ByteArrayBuffer;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class QuestionActivity extends AppCompatActivity {
     final static int ACT_EDIT = 0;
@@ -40,6 +57,11 @@ public class QuestionActivity extends AppCompatActivity {
     public ImageView image_view;
     private Uri mImageCaptureUri;
     private String absoultePath;
+
+    JSONObject jsonObject;
+    final String TAG = "(InfoActivity)DEBUG:";
+    String responseString;
+    String urlString = "http://172.30.1.49:8080/test/SaveArticle.jsp";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +79,8 @@ public class QuestionActivity extends AppCompatActivity {
         ask_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sendTextToServer();
+
                 Intent intent = new Intent(QuestionActivity.this, AnswerActivity.class);
                 intent.putExtra("textin", ask_etext.getText().toString());
                 startActivityForResult(intent, ACT_EDIT);
@@ -91,6 +115,41 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
 
+    public void sendTextToServer() {
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    URI url = new URI(urlString);
+
+                    HttpPost httpPost = new HttpPost();
+                    httpPost.setURI(url);
+
+                    List<BasicNameValuePair> nameValuePairs = new ArrayList<BasicNameValuePair>(3);
+                    nameValuePairs.add(new BasicNameValuePair("userId", "ID4"));
+                    nameValuePairs.add(new BasicNameValuePair("text", ask_etext.getText().toString()));
+                    nameValuePairs.add(new BasicNameValuePair("title", "you"));
+
+                    Log.d(TAG, nameValuePairs.toString());
+
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                    httpClient.execute(httpPost);
+                }   catch (URISyntaxException e) {
+                    Log.e(TAG, e.getLocalizedMessage());
+                    e.printStackTrace();
+                }   catch (ClientProtocolException e) {
+                    Log.e(TAG, e.getLocalizedMessage());
+                    e.printStackTrace();
+                }   catch (IOException e) {
+                    Log.e(TAG, e.getLocalizedMessage());
+                    e.printStackTrace();
+                }
+            }
+        };
+        thread.start();
+    }
 
     public void doTakePohotoAction() { // 카메라 촬영 후 이미지 가져오기
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -140,6 +199,7 @@ public class QuestionActivity extends AppCompatActivity {
 
                 //crop된 이미지를 저장하기 위한 file 경로
                 String filePath = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/makecropimage/" + System.currentTimeMillis() + ".jpg";
+                Log.d(TAG, filePath);
 
                 if(extras != null) {
                     Bitmap photo = extras.getParcelable("data"); // crop 된 bitmap
@@ -152,7 +212,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         }
     }
-
+    ///storage/emulated/0/makecropimage/1465303680237.jpg
     private void storeCropImage(Bitmap bitmap, String filePath) {
         // 폴더를 생성하여 이미지를 저장
         String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/makecropimage";
